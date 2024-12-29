@@ -3,7 +3,7 @@
 import React from 'react';
 
 interface ShapeSelectorProps {
-  onSelect: (shape: 'tshape' | 'pricebar') => void;
+  onSelect: (shape: 'tshape' | 'pricebar' | 'splittshape') => void;
 }
 
 const ShapeSelector: React.FC<ShapeSelectorProps> = ({ onSelect }) => {
@@ -14,14 +14,21 @@ const ShapeSelector: React.FC<ShapeSelectorProps> = ({ onSelect }) => {
         className="px-6 py-3 bg-black text-white rounded-lg hover:opacity-80 transition-opacity"
         style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
       >
-        Tick Liquidity
+        T-Shape
       </button>
       <button
         onClick={() => onSelect('pricebar')}
         className="px-6 py-3 bg-black text-white rounded-lg hover:opacity-80 transition-opacity"
         style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
       >
-        Ranged Liquidity
+        Price Bar
+      </button>
+      <button
+        onClick={() => onSelect('splittshape')}
+        className="px-6 py-3 bg-black text-white rounded-lg hover:opacity-80 transition-opacity"
+        style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
+      >
+        Split T-Shape
       </button>
     </div>
   );

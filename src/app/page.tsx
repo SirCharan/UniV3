@@ -3,10 +3,17 @@
 import React from 'react';
 import TShape from '@/components/TShape';
 import PriceBar from '@/components/PriceBar';
+import SplitTShape from '@/components/SplitTShape';
 import ShapeSelector from '@/components/ShapeSelector';
 
+const descriptions = {
+  tshape: "How tick liquidity changes when price crosses a tick",
+  pricebar: "How ranged liquidity changes when price of ETH changes",
+  splittshape: "When this liquidity is borrowed, swap does not happen"
+};
+
 export default function Home() {
-  const [selectedShape, setSelectedShape] = React.useState<'tshape' | 'pricebar' | null>(null);
+  const [selectedShape, setSelectedShape] = React.useState<'tshape' | 'pricebar' | 'splittshape' | null>(null);
   const [ethPrice, setEthPrice] = React.useState('');
 
   const handleInputChange = (value: string) => {
@@ -21,7 +28,30 @@ export default function Home() {
       {/* Shape Selector */}
       <ShapeSelector onSelect={setSelectedShape} />
 
-      {/* Price Input - shared between components */}
+      {/* Description */}
+      <div 
+        className="absolute top-24 left-1/2 -translate-x-1/2 text-center text-xl text-black max-w-2xl px-4"
+        style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
+      >
+        {selectedShape && descriptions[selectedShape]}
+      </div>
+
+      {/* Selected Shape */}
+      <div className="flex justify-center items-center min-h-screen">
+        {selectedShape === 'tshape' && <TShape ethPrice={ethPrice} />}
+        {selectedShape === 'pricebar' && <PriceBar ethPrice={ethPrice} />}
+        {selectedShape === 'splittshape' && <SplitTShape ethPrice={ethPrice} />}
+        {!selectedShape && (
+          <div 
+            className="text-2xl text-black"
+            style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
+          >
+            Please select a shape above
+          </div>
+        )}
+      </div>
+
+      {/* Input section */}
       <div className="absolute bottom-8 right-8 text-right w-80">
         <h2 
           className="text-2xl font-semibold mb-4 text-black"
@@ -55,20 +85,6 @@ export default function Home() {
             <span className="text-sm text-black">$5000</span>
           </div>
         </div>
-      </div>
-
-      {/* Selected Shape */}
-      <div className="flex justify-center items-center min-h-screen">
-        {selectedShape === 'tshape' && <TShape ethPrice={ethPrice} />}
-        {selectedShape === 'pricebar' && <PriceBar ethPrice={ethPrice} />}
-        {!selectedShape && (
-          <div 
-            className="text-2xl text-black"
-            style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
-          >
-            Please select a shape above
-          </div>
-        )}
       </div>
     </main>
   );

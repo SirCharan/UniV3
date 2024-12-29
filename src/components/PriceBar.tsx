@@ -35,7 +35,7 @@ const PriceBar: React.FC<PriceBarProps> = ({ ethPrice }) => {
             className="absolute inset-0 flex items-center justify-center text-white font-bold"
             style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
           >
-            ETH
+            USDC
           </span>
         </div>
         {/* USDC portion */}
@@ -47,7 +47,7 @@ const PriceBar: React.FC<PriceBarProps> = ({ ethPrice }) => {
             className="absolute inset-0 flex items-center justify-center text-white font-bold"
             style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
           >
-            USDC
+            ETH
           </span>
         </div>
       </div>
