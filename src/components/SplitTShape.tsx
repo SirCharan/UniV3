@@ -38,7 +38,7 @@ const SplitTShape: React.FC<SplitTShapeProps> = ({ ethPrice }) => {
   return (
     <div className="flex flex-col gap-20">
       <div className="flex items-center gap-12">
-        {/* Vertical rectangle - now always shows 1 ETH */}
+        {/* Original vertical rectangle */}
         <div className="relative w-8 h-60 bg-black">
           <div 
             className="absolute inset-0 flex items-center justify-center"
@@ -50,9 +50,8 @@ const SplitTShape: React.FC<SplitTShapeProps> = ({ ethPrice }) => {
           </div>
         </div>
 
-
-        {/* Horizontal line with price labels */}
         <div className="relative">
+          {/* Horizontal line with price labels */}
           <div className="w-[480px] h-1 bg-black"></div>
           {/* Price marker */}
           {ethPrice && (
@@ -91,10 +90,11 @@ const SplitTShape: React.FC<SplitTShapeProps> = ({ ethPrice }) => {
             Value of borrowed asset
           </div>
           <div 
-            className="text-2xl font-bold text-black"
+            className="text-2xl text-black"
             style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
           >
-            1 ETH = {getBorrowedValue()}
+            <span className="font-bold">1 ETH</span>
+            <span className="text-xl"> = {getBorrowedValue()}</span>
           </div>
         </div>
         {/* Debt Rectangle */}

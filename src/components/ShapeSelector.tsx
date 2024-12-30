@@ -3,7 +3,7 @@
 import React from 'react';
 
 interface ShapeSelectorProps {
-  onSelect: (shape: 'tshape' | 'pricebar' | 'splittshape') => void;
+  onSelect: (shape: 'tshape' | 'pricebar' | 'splittshape' | 'traderpnl') => void;
 }
 
 const ShapeSelector: React.FC<ShapeSelectorProps> = ({ onSelect }) => {
@@ -29,6 +29,13 @@ const ShapeSelector: React.FC<ShapeSelectorProps> = ({ onSelect }) => {
         style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
       >
         Borrowed Tick Payoff
+      </button>
+      <button
+        onClick={() => onSelect('traderpnl')}
+        className="px-6 py-3 bg-black text-white rounded-lg hover:opacity-80 transition-opacity"
+        style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
+      >
+        Trader PnL
       </button>
     </div>
   );

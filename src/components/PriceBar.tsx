@@ -28,11 +28,11 @@ const PriceBar: React.FC<PriceBarProps> = ({ ethPrice }) => {
       <div className="relative h-12 rounded-lg overflow-hidden">
         {/* ETH portion */}
         <div 
-          className="absolute left-0 top-0 h-full bg-red-500 transition-all duration-300"
+          className="absolute left-0 top-0 h-full bg-[#2775CA] transition-all duration-300"
           style={{ width: `${getPercentage()}%` }}
         >
           <span 
-            className="absolute inset-0 flex items-center justify-center text-white font-bold"
+            className="absolute inset-0 flex items-center justify-center font-bold text-white"
             style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
           >
             USDC
@@ -40,11 +40,11 @@ const PriceBar: React.FC<PriceBarProps> = ({ ethPrice }) => {
         </div>
         {/* USDC portion */}
         <div 
-          className="absolute right-0 top-0 h-full bg-green-500 transition-all duration-300"
+          className="absolute right-0 top-0 h-full bg-gray-500 transition-all duration-300"
           style={{ width: `${100 - getPercentage()}%` }}
         >
           <span 
-            className="absolute inset-0 flex items-center justify-center text-white font-bold"
+            className="absolute inset-0 flex items-center justify-center font-bold text-white"
             style={{ fontFamily: '"Comic Sans MS", "Comic Sans", cursive' }}
           >
             ETH
