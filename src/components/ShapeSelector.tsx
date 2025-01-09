@@ -3,7 +3,7 @@
 import React from 'react';
 
 interface ShapeSelectorProps {
-  onSelect: (shape: 'tshape' | 'pricebar' | 'splittshape' | 'traderpnl') => void;
+  onSelect: React.Dispatch<React.SetStateAction<"tshape" | "pricebar" | "splittshape" | "traderpnl" | null>>;
 }
 
 const ShapeSelector: React.FC<ShapeSelectorProps> = ({ onSelect }) => {

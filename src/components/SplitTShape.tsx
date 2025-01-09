@@ -6,7 +6,7 @@ interface SplitTShapeProps {
 
 const SplitTShape: React.FC<SplitTShapeProps> = ({ ethPrice }) => {
   const prices = Array.from({ length: 7 }, (_, i) => 2000 + i * 500);
-  const pnlValues = [0, 250, 500, 750, 1000, 1250, 1500];
+  // const pnlValues = [0, 250, 500, 750, 1000, 1250, 1500];
 
   const getMarkerPosition = () => {
     const price = Number(ethPrice);

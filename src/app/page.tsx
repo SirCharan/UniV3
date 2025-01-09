@@ -9,11 +9,12 @@ import ShapeSelector from '@/components/ShapeSelector';
 const descriptions = {
   tshape: "How tick liquidity changes when price crosses a tick",
   pricebar: "How ranged liquidity changes when price of ETH changes",
-  splittshape: "When this liquidity is borrowed, swap does not happen"
+  splittshape: "When this liquidity is borrowed, swap does not happen",
+  traderpnl: "How trader PnL changes when price of ETH changes"
 };
 
 export default function Home() {
-  const [selectedShape, setSelectedShape] = React.useState<'tshape' | 'pricebar' | 'splittshape' | null>(null);
+  const [selectedShape, setSelectedShape] = React.useState<'tshape' | 'pricebar' | 'splittshape' | 'traderpnl' | null>(null);
   const [ethPrice, setEthPrice] = React.useState('');
 
   const handleInputChange = (value: string) => {
